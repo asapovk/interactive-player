@@ -7,6 +7,6 @@ const enhancer = applyMiddleware(api)
 const store = createStore(reducer,{}, enhancer)
 
 //dev only
-//window.store = store
+window.store = store
 
 export default store

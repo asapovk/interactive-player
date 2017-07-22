@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {Player} from 'video-react'
+import {trackPlayerState} from '../AC'
 import "video-react/dist/video-react.css"
+import {connect} from 'react-redux'
 
 const sources = {
   sintelTrailer: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
@@ -10,7 +12,7 @@ const sources = {
 }
 
 
-export default class PlayerWrap extends Component {
+class PlayerWrap extends Component {
 
   constructor(props, context) {
     super(props, context)
@@ -36,9 +38,12 @@ export default class PlayerWrap extends Component {
 
   handleStateChange(state, prevState) {
     // copy player state to this component's state
-    this.setState({
-      player: state
-    });
+  //  this.setState({
+  //    player: state
+  //  });
+    //console.log(state.currentTime)
+    console.log(this.props.player)
+    this.props.trackPlayerState(state.currentTime)
   }
 
   play() {
@@ -99,7 +104,7 @@ export default class PlayerWrap extends Component {
    }
 
   render() {
-  //  console.log(this.state.player)
+    console.log(this.props.player)
     return (
         <Player ref="player">
           <source src={this.state.source}/>
@@ -107,3 +112,8 @@ export default class PlayerWrap extends Component {
     )
   }
 }
+
+
+export default connect((state) => ({
+  player: state.player
+}), {trackPlayerState})(PlayerWrap)
