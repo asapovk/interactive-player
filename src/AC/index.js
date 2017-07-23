@@ -1,4 +1,4 @@
-import {LOAD_ALL_CHAPTERS, START, SUCCESS, FAIL, PLAYER} from '../constants'
+import {LOAD_ALL_CHAPTERS, START, SUCCESS, FAIL, PLAYER, FOCUSE_ON_CHAPTER} from '../constants'
 
 export function loadAllChapters() {
     return {
@@ -13,5 +13,12 @@ export function trackPlayerState(player) {
   return {
     type: PLAYER,
     payload: player
+  }
+}
+
+export function focuseOnChapter(chapter) {
+  return {
+    type: FOCUSE_ON_CHAPTER,
+    payload: chapter.startTime
   }
 }

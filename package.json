@@ -17,6 +17,7 @@
     "react-player": "^0.18.0",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
+    "reselect": "^3.0.1",
     "video-react": "^0.8.5"
   },
   "devDependencies": {

@@ -72,6 +72,10 @@ class PlayerWrap extends Component {
     }
   }
 
+  seekNow = (seconds) => {
+    this.refs.player.seek(seconds)
+  }
+
   changePlaybackRateRate(steps) {
      return () => {
        const { player } = this.refs.player.getState()
@@ -103,17 +107,29 @@ class PlayerWrap extends Component {
      }
    }
 
+   componentWillUpdate = () => {
+     console.log('updated')
+     if(this.props.changeChapter) {
+       this.seekNow(this.props.newCurrentTime)
+     }
+   }
+
   render() {
     console.log(this.props.player)
     return (
-        <Player ref="player">
-          <source src={this.state.source}/>
-        </Player>
+        <div>
+          <Player ref="player">
+            <source src={this.state.source}/>
+          </Player>
+          <button onClick={this.seek(50)} className="mr-3">currentTime = 50</button>
+        </div>
     )
   }
 }
 
 
 export default connect((state) => ({
-  player: state.player
+  player: state.player.currentTime,
+  newCurrentTime: state.player.newCurrentTime,
+  changeChapter: state.player.changeChapter
 }), {trackPlayerState})(PlayerWrap)
