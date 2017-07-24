@@ -3,6 +3,8 @@ import {Player} from 'video-react'
 import {trackPlayerState} from '../../AC'
 import "video-react/dist/video-react.css"
 import {connect} from 'react-redux'
+import SubBar from '../SubBar'
+import './style.css'
 
 const sources = {
   sintelTrailer: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
@@ -117,11 +119,11 @@ class PlayerWrap extends Component {
   render() {
     console.log(this.props.player)
     return (
-        <div>
+        <div className="playerWrap">
           <Player ref="player">
             <source src={this.state.source}/>
           </Player>
-          <button onClick={this.seek(50)} className="mr-3">currentTime = 50</button>
+          <SubBar/>
         </div>
     )
   }

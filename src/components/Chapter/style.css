@@ -1,3 +1,8 @@
-.red {
+.focused {
   color: red
+}
+
+.chapter {
+  padding: 20px;
+  cursor: pointer;
 }

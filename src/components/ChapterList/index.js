@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {loadAllChapters} from '../../AC'
 import Loader from '../Loader'
 import Chapter from '../Chapter/'
-//import './Chapters.css'
+import './style.css'
 
 class ChapterList extends Component {
 //  static propTypes = {
@@ -30,7 +30,7 @@ class ChapterList extends Component {
       <Chapter chapter={chapter}/>
     </li>)
     return (
-        <ul>
+        <ul className = "chapterList">
             {chapterElements}
         </ul>
     )

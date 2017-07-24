@@ -11,7 +11,7 @@ class SubBar extends Component {
   render () {
     const {content} = this.props
     return (
-      <div>{content}</div>
+      <div className = "subBar" >{content}</div>
     )
   }
 }

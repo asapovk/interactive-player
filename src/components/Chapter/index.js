@@ -12,14 +12,15 @@ class Chapter extends Component  {
   }
 
   applyFocusedStyle = () => {
-    if(this.props.focused) return 'red'
+    if(this.props.focused) return 'focused'
+    return ''
   }
 
 
   render () {
     const {chapter} = this.props
     return (
-      <a onClick = {this.handleFocuseOnChapter} className={this.applyFocusedStyle()}>{chapter.text}</a>
+      <a onClick = {this.handleFocuseOnChapter} className={this.applyFocusedStyle()+" chapter"}>{chapter.text}</a>
     )
   }
 }

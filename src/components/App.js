@@ -9,7 +9,6 @@ export default class App extends Component {
       <div>
         <div>Hello world</div>
         <PlayerWrap/>
-        <SubBar/>
         <ChapterList/>
       </div>
     )
