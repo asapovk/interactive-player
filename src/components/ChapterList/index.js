@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {loadAllChapters} from '../AC'
-import Loader from './Loader'
-import Chapter from './Chapter'
+import {loadAllChapters} from '../../AC'
+import Loader from '../Loader'
+import Chapter from '../Chapter/'
 //import './Chapters.css'
 
 class ChapterList extends Component {
@@ -21,8 +21,8 @@ class ChapterList extends Component {
 
 
   render () {
-    console.log('Props are')
-    console.log(this.props)
+    //console.log('Props are')
+    //console.log(this.props)
     const {chapters, loading} = this.props
     if(loading) return <Loader/>
 

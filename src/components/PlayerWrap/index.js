@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Player} from 'video-react'
-import {trackPlayerState} from '../AC'
+import {trackPlayerState} from '../../AC'
 import "video-react/dist/video-react.css"
 import {connect} from 'react-redux'
 

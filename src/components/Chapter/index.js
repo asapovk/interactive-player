@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {focuseOnChapter} from '../AC'
-import {selectChapter} from '../filters'
+import {focuseOnChapter} from '../../AC'
+import {selectChapter} from '../../filters'
 import {connect} from 'react-redux'
-import './chapter.css'
+import './style.css'
 
 class Chapter extends Component  {
 
