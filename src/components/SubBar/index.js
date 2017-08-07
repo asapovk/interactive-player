@@ -13,7 +13,7 @@ class SubBar extends Component {
     const {array} = this.props
     const preparedArray = array.map((element)=>{
       if(element.includes('$')) {
-        return (<Word id={element}/>)
+        return (<Word id={element} key={element}/>)
       }
       else return element
     })

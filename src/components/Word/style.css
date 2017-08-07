@@ -1,0 +1,16 @@
+.word {
+  position: relative;
+}
+
+.word-colored {
+  color: red;
+  background-color: yellow;
+  border-radius: 3px;
+}
+
+.wordMeaning {
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  text-align: center;
+}

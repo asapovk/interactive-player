@@ -1,10 +1,16 @@
-import {LOAD_ALL_CHAPTERS, START, SUCCESS, FAIL, PLAYER, FOCUSE_ON_CHAPTER} from '../constants'
+import {LOAD_ALL_CHAPTERS, START, SUCCESS, FAIL, PLAYER, FOCUSE_ON_CHAPTER, LOAD_ALL_WORDS} from '../constants'
 
 export function loadAllChapters() {
     return {
         type: LOAD_ALL_CHAPTERS,
         callAPI: '/api/chapters'
     }
+}
+export function loadAllWords() {
+  return {
+    type: LOAD_ALL_WORDS,
+    callAPI: '/api/words'
+  }
 }
 
 

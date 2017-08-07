@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {loadAllChapters} from '../../AC'
+import {loadAllWords} from '../../AC'
 import Loader from '../Loader'
 import Chapter from '../Chapter/'
 import './style.css'
@@ -15,8 +16,11 @@ class ChapterList extends Component {
 
   componentDidMount() {
     console.log('Component is mounted');
-    const {loaded, loading, loadAllChapters} = this.props
-    if (!loaded && !loading) loadAllChapters()
+    const {loaded, loading, loadAllChapters, loadAllWords} = this.props
+    if (!loaded && !loading) {
+      loadAllChapters()
+      loadAllWords()
+    }
   }
 
 
@@ -45,4 +49,4 @@ export default connect((state) => {
         loading: state.chapter.loading,
         loaded: state.chapter.loaded
     }
-}, {loadAllChapters})(ChapterList)
+}, {loadAllChapters, loadAllWords})(ChapterList)
