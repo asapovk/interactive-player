@@ -29,3 +29,14 @@ export function showActiveChapter(state) {
   return null
 
 }
+
+export function makeArrayOfWords(state) {
+    //var array = []
+    //console.log(showActiveChapter(state)+'showActiveChapter')
+    const string = showActiveChapter(state)
+    var array = []
+    if(string) {
+      array = string.split('@');
+    }
+  return array
+}

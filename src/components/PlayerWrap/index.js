@@ -9,7 +9,9 @@ import './style.css'
 const sources = {
   sintelTrailer: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
   bunnyTrailer: 'http://media.w3.org/2010/05/bunny/trailer.mp4',
-  bunnyMovie: 'http://media.w3.org/2010/05/bunny/movie.mp4',
+//  bunnyMovie: 'http://media.w3.org/2010/05/bunny/movie.mp4',
+  bunnyMovie: 'http://localhost:3001/api/video',
+  //bunnyMovie: 'https://www.dropbox.com/s/vwi5bkihstik639/Kuroko3_1.mp4',
   test: 'http://media.w3.org/2010/05/video/movie_300.webm',
 }
 

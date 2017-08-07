@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
+import Word from '../Word'
 import {connect} from 'react-redux'
-import {showActiveChapter} from '../../filters'
+import {showActiveChapter, makeArrayOfWords} from '../../filters'
 import './style.css'
 
 class SubBar extends Component {
@@ -8,14 +9,29 @@ class SubBar extends Component {
     super(props, context)
   }
 
+  prepareContent = () => {
+    const {array} = this.props
+    const preparedArray = array.map((element)=>{
+      if(element.includes('$')) {
+        return (<Word id={element}/>)
+      }
+      else return element
+    })
+    return preparedArray
+  }
+
+
   render () {
     const {content} = this.props
     return (
-      <div className = "subBar" >{content}</div>
+      <div className = "subBar" >{this.prepareContent()}</div>
     )
   }
 }
 
 export default connect ((state) => ({
-  content: showActiveChapter(state)})) (SubBar)
+  content: showActiveChapter(state),
+  array: makeArrayOfWords(state)
+
+})) (SubBar)
 //Continue code here!!!

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {focuseOnChapter} from '../../AC'
 import {selectChapter} from '../../filters'
 import {connect} from 'react-redux'
+import Word from '../Word'
 import './style.css'
 
 class Chapter extends Component  {
